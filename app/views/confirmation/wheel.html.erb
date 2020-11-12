@@ -1,0 +1,47 @@
+<body style="background-color:#add8e6 ;">
+	<div id="bodywheel" class="bodywheel">
+	<div id="mainbox" class="mainbox">
+		<div id="box" class="box">
+		<% @options.each do |option| %>
+			<div class="box1">
+				<span class="span1"><b><%= option.name %></b></span>
+				<span class="span2"><b><%= option.name1 %></b></span>
+				<span class="span3"><b><%= option.name2 %></b></span>
+				<span class="span4"><b><%= option.name3 %></b></span>
+			</div>
+			<div class="box2">
+				<span class="span1"><b><%= option.name4 %></b></span>
+				<span class="span2"><b><%= option.name5 %></b></span>
+				<span class="span3"><b><%= option.name6 %></b></span>
+				<span class="span4"><b><%= option.name7 %></b></span>
+			</div>
+		</div>
+		</div>
+		<button class="spin" onclick="myfunction()">SPIN</button>
+	</div>
+</body>
+
+<script>
+	
+function myfunction(){
+
+
+	var x = 1024; //min value
+	var y = 9999; // max value
+
+	var deg = Math.floor(Math.random() * (x - y)) + y;
+
+	document.getElementById('box').style.transform = "rotate("+deg+"deg)";
+
+	var element = document.getElementById('mainbox');
+	element.classList.remove('animate');
+	setTimeout(function(){
+		element.classList.add('animate');
+	}, 5000); //5000 = 5 second
+}
+
+</script>
+
+
+
+<% end %>

@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<h1><b>Options</b></h1>
+</head>
+<body style="background-color:#add8e6 ;">
+<table class="table table-dark">
+  <tbody>
+     <tr>
+      <td>Option 1</td>
+      <td>Option 2</td>
+      <td>Option 3</td>
+      <td>Option 4</td>
+      <td>Option 5</td>
+      <td>Option 6</td>
+      <td>Option 7</td>
+      <td>Option 8</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+ 
+
+  
+    <% @options.each do |option| %>
+      <tr>
+        <td><%= option.name %></td>
+         <td><%= option.name1 %></td>
+          <td><%= option.name2 %></td>
+           <td><%= option.name3 %></td>
+            <td><%= option.name4 %></td>
+             <td><%= option.name5 %></td>
+              <td><%= option.name6 %></td>
+               <td><%= option.name7 %></td>
+                
+        <td><%= link_to 'Edit', edit_option_path(option), class: 'btn btn-warning' %></td>
+        <td><%= button_to 'Delete Options', option, method: :delete, class: 'btn btn-danger'  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="btn-group" role="group">
+<%= link_to "Wheel", confirmation_wheel_path, class: 'btn btn-success' %>
+
+<%= link_to 'New Options', new_option_path, class: 'btn btn-primary' %>
+</div>
+<br>
+<br>
+<h2><b>Note: the wheel can only handle 8 options max</b></h2>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
